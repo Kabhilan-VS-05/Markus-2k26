@@ -1,0 +1,347 @@
+/* REGISTRATION PASS - MINIMALIST CARD STACK DESIGN WITH SCANNING EFFECT */
+.pass-container {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.register-wrapper {
+    width: 100%;
+    max-width: 850px;
+    position: relative;
+}
+
+/* Stacked Card Effect */
+.register-wrapper::before,
+.register-wrapper::after {
+    content: '';
+    position: absolute;
+    width: 95%;
+    height: 100%;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.register-wrapper::before {
+    top: -8px;
+    opacity: 0.6;
+}
+
+.register-wrapper::after {
+    top: -16px;
+    opacity: 0.3;
+}
+
+/* Main Card */
+.modern-pass {
+    display: flex;
+    background: linear-gradient(145deg, #1a1a2e 0%, #16213e 100%);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(99, 102, 241, 0.2);
+}
+
+/* NO Accent Stripe in Dark Mode */
+.modern-pass::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, #4f46e5, #00f2ea);
+    z-index: 1;
+    display: none; /* Hidden in dark mode */
+}
+
+/* SCANNING EFFECT - Animated Laser Line */
+.modern-pass::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(0, 242, 234, 0.3) 25%,
+        rgba(0, 242, 234, 1) 50%,
+        rgba(0, 242, 234, 0.3) 75%,
+        transparent 100%
+    );
+    box-shadow: 0 0 20px rgba(0, 242, 234, 0.8), 0 0 40px rgba(0, 242, 234, 0.4);
+    animation: scan-line 4s ease-in-out infinite;
+    z-index: 10;
+    pointer-events: none;
+}
+
+@keyframes scan-line {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(500px);
+        opacity: 0;
+    }
+}
+
+.pass-left {
+    flex: 1.5;
+    padding: 50px;
+    position: relative;
+    z-index: 2;
+}
+
+.pass-tags {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.tag-pill {
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.tag-pill.purple {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    border: none;
+}
+
+.tag-pill.cyan {
+    background: linear-gradient(135deg, #00f2ea 0%, #0891b2 100%);
+    color: #fff;
+    border: none;
+}
+
+.pass-title {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 20px;
+    line-height: 1;
+    letter-spacing: -2px;
+}
+
+.pass-desc {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.pass-footer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-pass {
+    background: linear-gradient(135deg, #4f46e5 0%, #00f2ea 100%);
+    color: #fff;
+    padding: 16px 40px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(79, 70, 229, 0.3);
+    border: none;
+    font-size: 1rem;
+}
+
+.btn-pass:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(79, 70, 229, 0.5);
+}
+
+.payment-info {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pass-divider {
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, rgba(99, 102, 241, 0.3), transparent);
+    margin: 0;
+}
+
+.pass-right {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.qr-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    transform: rotate(-2deg);
+    transition: transform 0.3s;
+}
+
+.qr-box:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.qr-box img {
+    width: 150px;
+    height: 150px;
+    display: block;
+}
+
+.admit-info .admit-one {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 4px;
+    color: #00f2ea;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.admit-info .date {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 8px;
+    font-weight: 800;
+}
+
+.admit-info .pass-id {
+    font-family: monospace;
+    color: #64748b;
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+/* LIGHT MODE - Clean Professional Card WITH SCANNING */
+[data-theme="light"] .register-wrapper::before,
+[data-theme="light"] .register-wrapper::after {
+    display: none !important;
+}
+
+[data-theme="light"] .modern-pass {
+    background: #fff !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Show accent stripe in light mode */
+[data-theme="light"] .modern-pass::before {
+    display: none !important; /* Hidden in light mode */
+}
+
+/* Light Mode Scanning Effect - Subtle Indigo */
+[data-theme="light"] .modern-pass::after {
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(79, 70, 229, 0.2) 25%,
+        rgba(79, 70, 229, 0.6) 50%,
+        rgba(79, 70, 229, 0.2) 75%,
+        transparent 100%
+    ) !important;
+    box-shadow: 0 0 15px rgba(79, 70, 229, 0.3), 0 0 30px rgba(79, 70, 229, 0.1) !important;
+}
+
+[data-theme="light"] .pass-title {
+    color: #0f172a !important;
+}
+
+[data-theme="light"] .pass-desc {
+    color: #475569 !important;
+}
+
+[data-theme="light"] .pass-right {
+    background: #f8fafc !important;
+    border-left: 1px solid #e2e8f0 !important;
+}
+
+[data-theme="light"] .tag-pill.purple {
+    background: #e0e7ff !important;
+    color: #4338ca !important;
+}
+
+[data-theme="light"] .tag-pill.cyan {
+    background: #cffafe !important;
+    color: #0891b2 !important;
+}
+
+[data-theme="light"] .qr-box {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06) !important;
+}
+
+[data-theme="light"] .admit-info .date {
+    color: #0f172a !important;
+}
+
+[data-theme="light"] .admit-info .admit-one {
+    color: #4f46e5 !important;
+}
+
+[data-theme="light"] .admit-info .pass-id {
+    color: #94a3b8 !important;
+}
+
+[data-theme="light"] .payment-info {
+    color: #64748b !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .modern-pass {
+        flex-direction: column;
+    }
+    
+    .pass-left,
+    .pass-right {
+        padding: 30px;
+    }
+    
+    .pass-title {
+        font-size: 2rem;
+    }
+    
+    .pass-divider {
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(to right, transparent, rgba(99, 102, 241, 0.3), transparent);
+    }
+    
+    .qr-box img {
+        width: 120px;
+        height: 120px;
+    }
+}

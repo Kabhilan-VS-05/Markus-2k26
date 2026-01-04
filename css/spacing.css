@@ -1,0 +1,69 @@
+/* SECTION SPACING ADJUSTMENTS - REDUCED GAPS */
+
+/* Reduce section padding */
+section {
+    padding: 60px 0 !important;
+}
+
+/* Specific section adjustments */
+.hero {
+    padding-bottom: 40px !important;
+}
+
+#about {
+    padding-top: 40px !important;
+}
+
+#events,
+#schedule,
+#guidelines,
+#team,
+#register {
+    padding: 50px 0 !important;
+}
+
+/* Remove extra margins */
+.section-header {
+    margin-bottom: 40px !important;
+}
+
+.team-subtitle {
+    margin-top: 30px !important;
+    margin-bottom: 25px !important;
+}
+
+/* Tech Divider spacing */
+.tech-divider {
+    margin: 40px 0 !important;
+}
+
+/* Mobile - Even tighter spacing */
+@media (max-width: 768px) {
+    section {
+        padding: 40px 0 !important;
+    }
+    
+    .hero {
+        padding-bottom: 30px !important;
+    }
+    
+    #about {
+        padding-top: 30px !important;
+    }
+    
+    #events,
+    #schedule,
+    #guidelines,
+    #team,
+    #register {
+        padding: 35px 0 !important;
+    }
+    
+    .section-header {
+        margin-bottom: 30px !important;
+    }
+    
+    .tech-divider {
+        margin: 30px 0 !important;
+    }
+}

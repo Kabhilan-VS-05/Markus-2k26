@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Us – 26 | Intra-Department Symposium</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pass-redesign.css">
+    <link rel="stylesheet" href="css/light-theme.css">
+    <link rel="stylesheet" href="css/bg-animations.css">
+    <link rel="stylesheet" href="css/team-animations.css">
+    <link rel="stylesheet" href="css/cursor-effects.css">
+    <link rel="stylesheet" href="css/social-icons.css">
+    <link rel="stylesheet" href="css/glass-theme.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/mobile-nav.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/spacing.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <div class="cursor-glow"></div>
+    
+    <header class="header">
+        <nav class="navbar container">
+            <a href="#home" class="logo">Mark Us <span class="accent">– 26</span></a>
+            <div class="nav-toggle" id="navToggle">
+                <i class="bi bi-list"></i>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#events" class="nav-link">Events</a></li>
+                <li><a href="#schedule" class="nav-link">Schedule</a></li>
+                <li><a href="#team" class="nav-link">Team</a></li>
+                <li><a href="#register" class="btn btn-primary nav-btn">Register</a></li>
+                <li>
+                    <button id="themeToggle" class="theme-toggle" aria-label="Toggle Theme">
+                        <i class="bi bi-moon-stars-fill"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-bg"></div>
+            <div class="container hero-content">
+                <div class="hero-badge fade-in-up">
+                    <span class="badge-text">Dept. of Computer Technology – PG</span>
+                </div>
+                <h1 class="hero-title fade-in-up delay-1">Mark Us – 26</h1>
+                <p class="hero-subtitle fade-in-up delay-2">Intra College One-Day Symposium | <span class="accent-text">January 24, 2026</span></p>
+                <p class="hero-tagline fade-in-up delay-3">Ignite Your Skills. Inspire Your Future.</p>
+                
+                <div class="countdown-container fade-in-up delay-4">
+                    <div class="timer-item">
+                        <span id="days" class="timer-value">00</span>
+                        <span class="timer-label">Days</span>
+                    </div>
+                    <div class="timer-separator">:</div>
+                    <div class="timer-item">
+                        <span id="hours" class="timer-value">00</span>
+                        <span class="timer-label">Hours</span>
+                    </div>
+                    <div class="timer-separator">:</div>
+                    <div class="timer-item">
+                        <span id="minutes" class="timer-value">00</span>
+                        <span class="timer-label">Mins</span>
+                    </div>
+                    <div class="timer-separator">:</div>
+                    <div class="timer-item">
+                        <span id="seconds" class="timer-value">00</span>
+                        <span class="timer-label">Secs</span>
+                    </div>
+                </div>
+
+                <div class="hero-cta fade-in-up delay-5">
+                    <a href="#register" class="btn btn-primary btn-glow">Register Now <i class="bi bi-arrow-right"></i></a>
+                    <a href="#events" class="btn btn-outline">Explore Events</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2 class="section-title">About The Event</h2>
+                    <p class="section-desc">Discover the essence of Mark Us – 26</p>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="glass-card reveal">
+                        <div class="card-icon"><i class="bi bi-info-circle"></i></div>
+                        <h3>Description</h3>
+                        <p>Mark Us – 26 is a one-day intra-department symposium designed to bring together students, faculty, and industry professionals to explore the latest advancements in computer technology.</p>
+                    </div>
+                    <div class="glass-card reveal delay-1">
+                        <div class="card-icon"><i class="bi bi-bullseye"></i></div>
+                        <h3>Purpose</h3>
+                        <p>Our goal is to foster a culture of innovation, collaboration, and continuous learning. We aim to provide a platform for students to showcase their technical skills and creative ideas.</p>
+                    </div>
+                    <div class="glass-card reveal delay-2">
+                        <div class="card-icon"><i class="bi bi-stars"></i></div>
+                        <h3>What to Expect</h3>
+                        <p>Engaging technical and non-technical events, insightful paper presentations, and opportunities to network with peers and mentors. Expect a day filled with learning and fun.</p>
+                    </div>
+                    <div class="glass-card reveal delay-3">
+                        <div class="card-icon"><i class="bi bi-people"></i></div>
+                        <h3>Who Can Participate</h3>
+                        <p>The symposium is open to all students of the Department of Computer Technology – PG. We encourage everyone, regardless of skill level, to participate.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Section -->
+        <section id="events" class="events-section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2 class="section-title">Symposium Events</h2>
+                    <p class="section-desc">Showcase your talent in Technical and Non-Technical arenas</p>
+                </div>
+
+                <div class="events-tabs reveal">
+                    <button class="tab-btn active" data-tab="all">All</button>
+                    <button class="tab-btn" data-tab="technical">Technical</button>
+                    <button class="tab-btn" data-tab="non-technical">Non-Technical</button>
+                </div>
+
+                <div class="events-grid">
+                    <!-- Technical Events -->
+                    <div class="event-card technical reveal">
+                        <div class="event-image">
+                            <i class="bi bi-file-earmark-text"></i>
+                        </div>
+                        <div class="event-content">
+                            <span class="event-tag tech">Technical</span>
+                            <span class="event-time-badge live">Live <i class="bi bi-broadcast"></i></span>
+                            <h3>Paper Presentation</h3>
+                            <div class="event-details">
+                                <span><i class="bi bi-people"></i> Individual or Team of 2</span>
+                                <span><i class="bi bi-clock"></i> 11:00 AM</span>
+                            </div>
+                            <p>Present your research on emerging technologies and innovative ideas. Abstract submission required. 7 mins presentation + 3 mins Q&A.</p>
+                            <a href="#register" class="btn btn-sm btn-primary">Book Your Slot</a>
+                        </div>
+                    </div>
+
+                    <div class="event-card technical reveal delay-1">
+                        <div class="event-image">
+                            <i class="bi bi-laptop"></i>
+                        </div>
+                        <div class="event-content">
+                            <span class="event-tag tech">Technical</span>
+                            <span class="event-time-badge live">Live <i class="bi bi-broadcast"></i></span>
+                            <h3>Project Presentation</h3>
+                            <div class="event-details">
+                                <span><i class="bi bi-people"></i> Team of up to 3</span>
+                                <span><i class="bi bi-clock"></i> 01:30 PM</span>
+                            </div>
+                            <p>Showcase your innovative projects and working prototypes. Working model preferred. Interactive demonstration.</p>
+                            <a href="#register" class="btn btn-sm btn-primary">Book Your Slot</a>
+                        </div>
+                    </div>
+
+                    <div class="event-card technical reveal delay-2">
+                        <div class="event-image">
+                            <i class="bi bi-palette"></i>
+                        </div>
+                        <div class="event-content">
+                            <span class="event-tag tech">Technical</span>
+                            <span class="event-time-badge live">Live <i class="bi bi-broadcast"></i></span>
+                            <h3>UI/UX Design</h3>
+                            <div class="event-details">
+                                <span><i class="bi bi-person"></i> Individual Participation</span>
+                                <span><i class="bi bi-clock"></i> 10:30 AM</span>
+                            </div>
+                            <p>Design intuitive and aesthetically pleasing user interfaces. Focus on Creativity & UX. Tools: Figma/Adobe XD.</p>
+                            <a href="#register" class="btn btn-sm btn-primary">Book Your Slot</a>
+                        </div>
+                    </div>
+
+                    <div class="event-card technical reveal">
+                        <div class="event-image">
+                            <i class="bi bi-question-circle"></i>
+                        </div>
+                        <div class="event-content">
+                            <span class="event-tag tech">Technical</span>
+                            <span class="event-time-badge live">Live <i class="bi bi-broadcast"></i></span>
+                            <h3>Tech Quiz</h3>
+                            <div class="event-details">
+                                <span><i class="bi bi-people"></i> Team of 2</span>
+                                <span><i class="bi bi-clock"></i> 02:00 PM</span>
+                            </div>
+                            <p>Test your knowledge on the latest trends and fundamentals in technology. Multiple Rounds. Quick fire buzzer round.</p>
+                            <a href="#register" class="btn btn-sm btn-primary">Book Your Slot</a>
+                        </div>
+                    </div>
+
+                    <div class="event-card technical reveal delay-1">
+                        <div class="event-image">
+                            <i class="bi bi-bug"></i>
+                        </div>
+                        <div class="event-content">
+                            <span class="event-tag tech">Technical</span>
+                            <h3>Code Adapt</h3>
+                            <div class="event-details">
+                                <span><i class="bi bi-person"></i> Individual Participation</span>
+                                <span><i class="bi bi-code-slash"></i> C/C++/Java/Python</span>
+                            </div>
+                            <p>A competitive coding challenge to solve logical problems. Focus on efficiency.</p>
+                            <a href="#register" class="btn btn-sm btn-primary">Book Your Slot</a>
+                        </div>
+                    </div>
+
+                    <!-- Non-Technical Events -->
+                    <div class="event-card non-technical reveal delay-2">
+                        <div class="event-image">
+                            <i class="bi bi-trophy"></i>
+                        </div>
+                        <div class="event-content">
+                            <span class="event-tag non-tech">Non-Tech</span>
+                            <h3>IPL Auction</h3>
+                            <div class="event-details">
+                                <span><i class="bi bi-people"></i> Team of 3</span>
+                                <span><i class="bi bi-clock"></i> 1:00 PM</span>
+                            </div>
+                            <p>Assemble your dream cricket team in a thrilling auction simulation.</p>
+                            <a href="#register" class="btn btn-sm btn-primary">Register</a>
+                        </div>
+                    </div>
+
+                    <div class="event-card non-technical reveal">
+                        <div class="event-image">
+                            <i class="bi bi-controller"></i>
+                        </div>
+                        <div class="event-content">
+                            <span class="event-tag non-tech">Non-Tech</span>
+                            <h3>Chill & Skill</h3>
+                            <div class="event-details">
+                                <span><i class="bi bi-person"></i> Individual</span>
+                                <span><i class="bi bi-clock"></i> 2:00 PM</span>
+                            </div>
+                            <p>A series of fun and engaging mini-games to test your wit and reflexes.</p>
+                            <a href="#register" class="btn btn-sm btn-primary">Register</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Divider -->
+        <div class="tech-divider">
+            <div class="scrolling-text">
+                MARK US – 26 &nbsp;&nbsp;•&nbsp;&nbsp; SYMPOSIUM &nbsp;&nbsp;•&nbsp;&nbsp; JAN 24, 2026 &nbsp;&nbsp;•&nbsp;&nbsp; IGNITE YOUR SKILLS &nbsp;&nbsp;•&nbsp;&nbsp; INSPIRE YOUR FUTURE &nbsp;&nbsp;•&nbsp;&nbsp; DEPARTMENT OF COMPUTER TECHNOLOGY (PG) &nbsp;&nbsp;•&nbsp;&nbsp;
+            </div>
+        </div>
+
+        <!-- Schedule Section -->
+        <section id="schedule" class="schedule-section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2 class="section-title">Result & Schedule</h2>
+                    <p class="section-desc">Plan your day at the symposium</p>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-time">8:45 AM - 9:30 AM</div>
+                        <div class="timeline-content">
+                            <h3>Reporting & Registration</h3>
+                            <p><i class="bi bi-geo-alt"></i> Main Lobby</p>
+                            <span class="timeline-tag">General</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item reveal delay-1">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-time">9:30 AM - 10:00 AM</div>
+                        <div class="timeline-content">
+                            <h3>Inauguration</h3>
+                            <p><i class="bi bi-geo-alt"></i> Auditorium</p>
+                            <span class="timeline-tag ceremony">Ceremony</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item reveal delay-2">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-time">10:00 AM - 1:00 PM</div>
+                        <div class="timeline-content">
+                            <h3>Technical Track</h3>
+                            <p><i class="bi bi-geo-alt"></i> Respective Halls</p>
+                            <span class="timeline-tag tech">Events</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item reveal delay-3">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-time">1:00 PM - 2:00 PM</div>
+                        <div class="timeline-content">
+                            <h3>Lunch</h3>
+                            <p><i class="bi bi-geo-alt"></i> Cafeteria</p>
+                            <span class="timeline-tag break">Break</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-time">2:00 PM - 4:00 PM</div>
+                        <div class="timeline-content">
+                            <h3>Skills & Innovation Track</h3>
+                            <p><i class="bi bi-geo-alt"></i> Respective Halls</p>
+                            <span class="timeline-tag tech">Events</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item reveal delay-1">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-time">4:00 PM - 5:00 PM</div>
+                        <div class="timeline-content">
+                            <h3>Valedictory & Prize Giving</h3>
+                            <p><i class="bi bi-geo-alt"></i> Auditorium</p>
+                            <span class="timeline-tag ceremony">Ceremony</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guidelines Section -->
+        <section id="guidelines" class="guidelines-section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2 class="section-title">Event Guidelines</h2>
+                    <p class="section-desc">Rules and Regulations for Participants</p>
+                </div>
+                <div class="guidelines-grid reveal">
+                    <div class="guideline-card">
+                        <div class="g-icon"><i class="bi bi-clock-history"></i></div>
+                        <h4>Reporting Time</h4>
+                        <p>Participants must report by 08:45 AM at the registration desk.</p>
+                    </div>
+                    <div class="guideline-card">
+                        <div class="g-icon"><i class="bi bi-person-badge"></i></div>
+                        <h4>ID Card Required</h4>
+                        <p>College ID card is mandatory for entry to all venues.</p>
+                    </div>
+                    <div class="guideline-card">
+                        <div class="g-icon"><i class="bi bi-laptop"></i></div>
+                        <h4>Personal Devices</h4>
+                        <p>Use of personal laptops allowed for Coding/Design events.</p>
+                    </div>
+                    <div class="guideline-card">
+                        <div class="g-icon"><i class="bi bi-phone-vibrate"></i></div>
+                        <h4>Mobile Phones</h4>
+                        <p>Ensure your phones are on silent mode during sessions.</p>
+                    </div>
+                    <div class="guideline-card">
+                        <div class="g-icon"><i class="bi bi-shield-check"></i></div>
+                        <h4>Code of Conduct</h4>
+                        <p>Strict adherence to the code of conduct is expected.</p>
+                    </div>
+                    <div class="guideline-card">
+                        <div class="g-icon"><i class="bi bi-ticket-perforated"></i></div>
+                        <h4>Registration Pass</h4>
+                        <p>Keep a digital or printed copy of your registration pass ready.</p>
+                    </div>
+                    <div class="guideline-card">
+                        <div class="g-icon"><i class="bi bi-suit-tie"></i></div>
+                        <h4>Formal Attire</h4>
+                        <p>Decent casual or formal attire is expected for presentations.</p>
+                    </div>
+                    <div class="guideline-card">
+                        <div class="g-icon"><i class="bi bi-cup-hot"></i></div>
+                        <h4>Lunch & Refreshments</h4>
+                        <p>Lunch will be served at the cafeteria for all participants.</p>
+                    </div>
+                    <div class="guideline-card">
+                        <div class="g-icon"><i class="bi bi-award"></i></div>
+                        <h4>Certificates</h4>
+                        <p>Participation e-certificates will be issued after the event.</p>
+                    </div>
+                    <div class="guideline-card">
+                        <div class="g-icon"><i class="bi bi-tools"></i></div>
+                        <h4>Technical Help</h4>
+                        <p>Contact event volunteers for any software/hardware issues.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="team-section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2 class="section-title">The Team</h2>
+                </div>
+                
+                <h3 class="team-subtitle reveal">Faculty Mentor</h3>
+                <div class="team-grid justify-center reveal">
+                    <div class="team-card highlight-card">
+                        <div class="team-avatar">
+                            <i class="bi bi-person-badge-fill"></i>
+                        </div>
+                        <h3>Prof. Arumugam</h3>
+                        <span class="role">Event Convenor</span>
+                        <p class="desc">"Guiding the technical vision with decades of expertise."</p>
+                        <a href="tel:+919876543210" class="team-contact"><i class="bi bi-telephone"></i> Connect</a>
+                    </div>
+                </div>
+
+                <h3 class="team-subtitle reveal delay-1">Student Coordinators</h3>
+                <div class="team-grid reveal delay-2 justify-center">
+                    <div class="team-card highlight-card">
+                        <div class="team-avatar">
+                            <i class="bi bi-person-check-fill"></i>
+                        </div>
+                        <h3>Rithanya Paramashivam</h3>
+                        <span class="role">Student Coordinator</span>
+                        <p class="desc">"Managing logistics and execution with precision."</p>
+                        <a href="tel:+919876543210" class="team-contact"><i class="bi bi-telephone"></i> Connect</a>
+                    </div>
+                    <div class="team-card highlight-card">
+                        <div class="team-avatar">
+                            <i class="bi bi-person-gear"></i>
+                        </div>
+                        <h3>Naveen Kumar</h3>
+                        <span class="role">Student Coordinator</span>
+                        <p class="desc">"Leading technical coordination and infrastructure."</p>
+                        <a href="tel:+919876543210" class="team-contact"><i class="bi bi-telephone"></i> Connect</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registration Section -->
+        <section id="register" class="register-section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2 class="section-title">Registration Pass</h2>
+                    <p class="section-desc">Experience the Future of Innovation</p>
+                </div>
+                
+                <div class="pass-container reveal">
+                    <div class="register-wrapper"> <!-- Added Wrapper -->
+                        <div class="modern-pass">
+                            <div class="pass-left">
+                                <div class="pass-tags">
+                                    <span class="tag-pill purple">VIBE: TECH & INNOVATION</span>
+                                    <span class="tag-pill cyan">REGISTRATION OPEN</span>
+                                </div>
+                                <h2 class="pass-title">MARKUS -26 SYMPOSIUM</h2>
+                                <p class="pass-desc">Step into the elite circle of technology. Join us for a day of competitive coding, paper presentations, and technical breakthroughs.</p>
+                                
+                                <div class="pass-footer">
+                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfJDblMPOHU0rTfHexKXtiDMO4O5SqpntwF-SubOy47h7-DAA/viewform" target="_blank" class="btn-pass">
+                                        <i class="bi bi-ticket-fill"></i> GET YOUR PASS
+                                    </a>
+                                    <div class="payment-info">
+                                        <i class="bi bi-wallet2"></i> GPAY • UPI
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pass-divider"></div>
+                            <div class="pass-right">
+                                <div class="qr-box">
+                                    <img src="assets/qr-code.svg" alt="QR Code">
+                                </div>
+                                <div class="admit-info">
+                                    <p class="admit-one">ADMIT ONE</p>
+                                    <h3 class="date">24 Jan 2026</h3>
+                                    <p class="pass-id">MSC-PASS-2026</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3 class="footer-logo">Mark Us – 26</h3>
+                    <p>An Intra-Department One-Day Symposium organized by the Department of Computer Technology (PG). Join us for a day of innovation, competition, and learning.</p>
+                    <p class="footer-tagline">Ignite Your Skills. Inspire Your Future.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#schedule">Schedule</a></li>
+                        <li><a href="#team">Team</a></li>
+                        <li><a href="#register">Register</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Symposium Events</h4>
+                    <ul>
+                        <li><a href="#events">Paper Presentation</a></li>
+                        <li><a href="#events">Project Presentation</a></li>
+                        <li><a href="#events">UI/UX Design</a></li>
+                        <li><a href="#events">Tech Quiz</a></li>
+                        <li><a href="#events">Code Adapt</a></li>
+                        <li><a href="#events">IPL Auction</a></li>
+                        <li><a href="#events">Chill & Skill</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Get In Touch</h4>
+                    <p>MBA-MCA Block, Department of Computer Technology-PG</p>
+                    <p>College Campus</p>
+                    <p><i class="bi bi-calendar-event"></i> Date: Jan 24, 2026</p>
+                    <p><i class="bi bi-clock"></i> Time: 08:45 AM - 04:15 PM</p>
+                    <p class="phone"><i class="bi bi-telephone"></i> +91 93457 48455</p>
+                    <div class="social-links">
+                        <a href="#" target="_blank" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mark Us – 26. All rights reserved.</p>
+                <p>Designed By Dept. of CT (PG)</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/cursor-animation.js"></script>
+</body>
+</html>
