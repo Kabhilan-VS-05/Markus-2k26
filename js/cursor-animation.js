@@ -4,6 +4,9 @@ let mouseX = 0, mouseY = 0;
 let glowX = 0, glowY = 0;
 
 document.addEventListener('mousemove', (e) => {
+    // Disable on touch devices
+    if (!window.matchMedia("(pointer: fine)").matches) return;
+
     mouseX = e.clientX;
     mouseY = e.clientY;
     if (cursorGlow) cursorGlow.style.opacity = '1';
@@ -16,6 +19,9 @@ document.addEventListener('mouseleave', () => {
 // Smooth animation loop for cursor glow
 function animateCursorGlow() {
     if (!cursorGlow) return;
+    
+    // Stop animation on touch devices
+    if (!window.matchMedia("(pointer: fine)").matches) return;
     
     glowX += (mouseX - glowX) * 0.1;
     glowY += (mouseY - glowY) * 0.1;

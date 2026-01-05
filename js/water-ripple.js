@@ -7,6 +7,11 @@ function createRealisticWaterCanvas() {
         return;
     }
     
+    // DISABLE ON MOBILE for performance
+    if (window.innerWidth < 768) {
+        return;
+    }
+    
     // Check if canvas already exists
     if (document.getElementById('waterCanvas')) {
         return;

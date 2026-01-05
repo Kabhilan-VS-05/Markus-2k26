@@ -342,3 +342,53 @@
         box-shadow: none !important;
     }
 }
+
+/* Mobile Performance Optimizations */
+@media (max-width: 768px) {
+    /* Disable heavy blur effects */
+    .glass-card,
+    .event-card,
+    .team-card,
+    .guideline-card,
+    .modern-pass,
+    .header,
+    .footer {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: rgba(10, 10, 20, 0.95) !important; /* Solid fallback */
+    }
+
+    /* Light mode fallback */
+    [data-theme="light"] .glass-card,
+    [data-theme="light"] .event-card,
+    [data-theme="light"] .team-card,
+    [data-theme="light"] .guideline-card,
+    [data-theme="light"] .header,
+    [data-theme="light"] .footer {
+        background: rgba(255, 255, 255, 0.95) !important;
+    }
+
+    /* Remove heavy shadows */
+    .glass-card,
+    .event-card,
+    .team-card,
+    .guideline-card {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    /* Disable hover effects on mobile */
+    .glass-card:hover,
+    .event-card:hover,
+    .team-card:hover {
+        transform: none !important;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    /* Hide custom cursor elements */
+    .cursor-glow,
+    .cursor-ripple {
+        display: none !important;
+    }
+}

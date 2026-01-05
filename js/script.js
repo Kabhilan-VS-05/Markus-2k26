@@ -73,30 +73,38 @@ document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section');
     const navItems = document.querySelectorAll('.nav-link');
 
+    let ticking = false;
     window.addEventListener('scroll', () => {
-        // Sticky Header
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                // Sticky Header
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+
+                // Active Link
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollY >= (sectionTop - 200)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navItems.forEach(li => {
+                    li.classList.remove('active');
+                    if (li.getAttribute('href').includes(current)) {
+                        li.classList.add('active');
+                    }
+                });
+                
+                ticking = false;
+            });
+            ticking = true;
         }
-
-        // Active Link
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (scrollY >= (sectionTop - 200)) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        navItems.forEach(li => {
-            li.classList.remove('active');
-            if (li.getAttribute('href').includes(current)) {
-                li.classList.add('active');
-            }
-        });
     });
 
     // 5. Cursor Glow Effect
