@@ -1,0 +1,164 @@
+:root {
+  --accent: #00f5e1;
+}
+
+/* SECTION */
+.zigzag-timeline-section {
+  padding: 120px 20px;
+  text-align: center;
+  color: white;
+}
+
+.zigzag-title {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.zigzag-sub {
+  opacity: 0.7;
+  margin-bottom: 120px;
+}
+
+/* WRAPPER */
+.zigzag-wrapper {
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
+  perspective: 1500px;
+  transform-style: preserve-3d;
+}
+
+/* =========================
+   MULTI ZIG-ZAG LINES
+========================= */
+.zigzag-lines {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 160px;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.zigzag-lines svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.zigzag-path {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+
+  filter:
+    drop-shadow(0 0 10px rgba(0,245,225,0.45))
+    drop-shadow(0 0 26px rgba(0,245,225,0.25));
+}
+
+/* Depth variation */
+.zigzag-path.line-1 { opacity: 1;   animation: flow1 6s linear infinite; }
+.zigzag-path.line-2 { opacity: 0.6; animation: flow2 8s linear infinite; }
+.zigzag-path.line-3 { opacity: 0.35;animation: flow3 10s linear infinite; }
+
+/* Flow illusion */
+@keyframes flow1 {
+  from { stroke-dashoffset: 0; }
+  to   { stroke-dashoffset: -2000; }
+}
+@keyframes flow2 {
+  from { stroke-dashoffset: 400; }
+  to   { stroke-dashoffset: -1600; }
+}
+@keyframes flow3 {
+  from { stroke-dashoffset: 800; }
+  to   { stroke-dashoffset: -1200; }
+}
+
+/* =========================
+   TIMELINE ITEM
+========================= */
+.zigzag-item {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 150px;
+}
+
+/* =========================
+   BIG PREMIUM CARD
+========================= */
+.zigzag-card {
+  width: 560px;               /* 🔥 BIGGER */
+  max-width: 94%;
+  padding: 40px 46px;
+  background: #050505; /* Solid Dark to block line */
+  backdrop-filter: none;
+  border-radius: 28px;
+  border: 1px solid rgba(255,255,255,0.18);
+  text-align: center;
+
+  text-align: center;
+
+  /* GSAP handles opacity/transform */
+  opacity: 0;
+}
+
+/* ACTIVE */
+.zigzag-item.active .zigzag-card {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* TEXT */
+.zigzag-card h3 {
+  margin-bottom: 8px;
+}
+
+.zigzag-card p {
+  opacity: 0.7;
+  font-size: 0.95rem;
+}
+
+.zigzag-card span {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 6px 16px;
+  font-size: 0.75rem;
+  border-radius: 22px;
+  background: var(--accent);
+  color: #000;
+  font-weight: 700;
+}
+
+.time {
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+
+/* Slight arrow glow */
+.zigzag-path marker path {
+  filter: drop-shadow(0 0 4px rgba(0,245,225,0.4));
+}
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .zigzag-lines {
+    width: 90px;
+  }
+
+  .zigzag-card {
+    width: 94%;
+    padding: 32px 30px;
+  }
+}

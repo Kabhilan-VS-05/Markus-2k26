@@ -1,0 +1,228 @@
+.team-section {
+  padding: 100px 20px;
+  background: transparent;
+  width: 100%;
+}
+
+.team-title {
+  font-size: 3rem;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 40px;
+  width: 100%;
+  display: block;
+}
+
+.team-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.team-category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.category-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.category-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--accent-color);
+  border-radius: 2px;
+}
+
+/* GLASS CARD BASE */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), 
+              box-shadow 0.4s ease, 
+              border-color 0.4s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.glass-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(0, 245, 225, 0.3);
+  box-shadow: 0 30px 60px rgba(0, 245, 225, 0.15);
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.05), transparent 60%);
+  pointer-events: none;
+}
+
+/* FACULTY CARD */
+.faculty-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 50px;
+  max-width: 500px;
+  background: linear-gradient(135deg, rgba(6, 20, 20, 0.8), rgba(2, 8, 8, 0.9));
+  border: 1px solid var(--accent-color);
+}
+
+.faculty-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(0, 245, 225, 0.1);
+  color: var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  margin-bottom: 25px;
+  border: 2px solid rgba(0, 245, 225, 0.2);
+}
+
+.faculty-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.faculty-role {
+  color: var(--accent-color);
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.faculty-divider {
+  width: 50px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  margin-bottom: 20px;
+}
+
+/* STUDENT GRID */
+.student-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  width: 100%;
+  justify-items: center;
+}
+
+.student-card {
+  padding: 40px 30px;
+  text-align: center;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.student-card .avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.student-card:hover .avatar {
+  background: var(--accent-color);
+  color: #000;
+  transform: rotateY(180deg);
+}
+
+.student-card .name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #e0e0e0;
+}
+
+.student-card .role {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 20px;
+}
+
+/* COMMON ELEMENTS */
+.desc {
+  font-size: 1rem;
+  color: #ccc; /* Lighter grey for better readability */
+  line-height: 1.6;
+  margin-bottom: 25px;
+  font-style: italic;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border-radius: 50px;
+  background: transparent;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.contact-btn:hover {
+  background: var(--accent-color);
+  color: #000;
+  box-shadow: 0 0 20px rgba(0, 245, 225, 0.4);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .team-section {
+    padding: 60px 20px;
+  }
+  
+  .category-title {
+    font-size: 1.8rem;
+  }
+
+  .student-grid {
+    grid-template-columns: 1fr; /* Stack on mobile */
+  }
+}
+

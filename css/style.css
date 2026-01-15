@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+
+:root {
+  --bg-color: #050505;
+  --text-color: #ffffff;
+  --accent-color: #00f5e1; /* Cyan/Teal Neon */
+  --accent-secondary: #a855f7; /* UNIFIED: Purple for Non-Tech */
+  --glass-bg: rgba(20, 20, 25, 0.7);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+  --font-main: 'Outfit', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* NAVBAR - iOS Liquid Glass Style */
+header {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-box {
+  width: 90%;
+  max-width: 1200px;
+  padding: 15px 30px;
+  border-radius: 50px; /* Pill Shape */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  /* Transparent Initial State - Liquid Glass Effect */
+  background: transparent; /* Fully Transparent */
+  backdrop-filter: blur(0px); /* No blur initially for cleaner look if requested "More Transparent" */
+  -webkit-backdrop-filter: blur(0px);
+  border: none;
+  box-shadow: none;
+  
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+header.scrolled {
+  top: 10px;
+}
+
+header.scrolled .nav-box {
+  width: 85%; 
+  max-width: 1000px;
+  background: rgba(20, 20, 20, 0.25); /* Much more transparent */
+  backdrop-filter: blur(25px) saturate(180%);
+  -webkit-backdrop-filter: blur(25px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.15); /* Stronger border for glass definition */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  padding: 12px 25px;
+}
+
+
+
+.logo {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #fff;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #fff, var(--accent-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logo sub {
+  font-size: 0.6em;
+  color: var(--accent-color);
+  -webkit-text-fill-color: var(--accent-color);
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--accent-color);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: var(--accent-color);
+  bottom: -4px;
+  left: 0;
+  transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.cta {
+  padding: 10px 24px;
+  background: var(--accent-color);
+  color: #000;
+  border: none;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(0, 245, 225, 0.6);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* HERO SECTION */
+.hero {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: radial-gradient(circle at center, #1a1a2e 0%, #000 70%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: url('https://grainy-gradients.vercel.app/noise.svg');
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.hero-content {
+  z-index: 2;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero-pill {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: var(--accent-color);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #fff 40%, #777);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-title span {
+  color: var(--accent-color);
+  -webkit-text-fill-color: var(--accent-color);
+}
+
+.hero-sub {
+  font-size: 1.2rem;
+  color: #aaa;
+  margin-bottom: 30px;
+}
+
+.hero-sub span {
+  color: #fff;
+  font-weight: 600;
+}
+
+.hero-tagline {
+  font-size: 1.1rem;
+  color: var(--accent-color);
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+/* COUNTDOWN */
+.hero-countdown {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.hero-countdown div {
+  text-align: center;
+}
+
+.hero-countdown span {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.hero-countdown small {
+  font-size: 0.75rem;
+  color: #777;
+  letter-spacing: 1px;
+}
+
+/* HERO BUTTONS */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.hero-primary {
+  padding: 14px 30px;
+  background: var(--accent-color);
+  color: #000;
+  font-weight: 700;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hero-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(0, 245, 225, 0.4);
+}
+
+.hero-secondary {
+  padding: 14px 30px;
+  background: transparent;
+  color: #fff;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.hero-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* =========================================
+   SCROLLBAR & GLOBAL TYPOGRAPHY REFINE
+========================================= */
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color); 
+  border-radius: 5px;
+  border: 2px solid #050505; /* Padding effect */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00c7b7; 
+}
+
+/* Base Polish */
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+  line-height: 1.6;
+  font-weight: 300; /* Lighter base weight */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700; /* Consistent Bold Headings */
+  letter-spacing: -0.02em;
+}
+
+/* FOOTER POLISH in style.css override? No, better do it in footer.css or add global utility. 
+   I'll add it here for now if footer.css is specific.
+   Wait, let's keep it clean. I'll read footer.css next.
+*/
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .nav-links {
+    display: none; /* Mobile menu logic handled in JS toggles */
+  }
+
+  /* ... rest of existing mobile styles ... */
+  .nav-links.show {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 90px;
+    right: 5%; /* Center it more */
+    width: 90%; /* Wide menu */
+    background: rgba(10, 10, 10, 0.95); /* Deep dark */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 30px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    z-index: 1001;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem; /* Larger touch targets */
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+
+  .cta {
+    display: none; 
+  }
+  
+  .menu-toggle {
+    display: block;
+  }
+}

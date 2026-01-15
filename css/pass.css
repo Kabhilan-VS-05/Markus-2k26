@@ -1,0 +1,220 @@
+/* REGISTRATION PASS SECTION */
+.registration-pass-section {
+  padding: 100px 20px;
+  background: radial-gradient(circle at center, #111 0%, #000 70%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.ticket-container {
+  width: 100%;
+  max-width: 850px;
+  transform-style: preserve-3d;
+  transition: transform 0.3s;
+}
+
+.ticket-container:hover {
+  transform: rotateX(2deg) rotateY(2deg);
+}
+
+.ticket {
+  display: flex;
+  background: var(--bg-color);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  position: relative;
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.03) 0px,
+      rgba(255, 255, 255, 0.03) 1px,
+      transparent 1px,
+      transparent 10px
+    );
+}
+
+/* HOLOGRAPHIC SHIMMER OVERLAY */
+.ticket::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    rgba(0, 245, 225, 0.2),
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: skewX(-20deg);
+  animation: hologramShine 6s infinite linear;
+  pointer-events: none;
+  z-index: 10;
+}
+
+@keyframes hologramShine {
+  0% { left: -150%; }
+  20% { left: 150%; }
+  100% { left: 150%; } /* Pause interval */
+}
+
+/* Stubs */
+.ticket-left {
+  flex: 2;
+  padding: 40px;
+  border-right: 2px dashed rgba(255, 255, 255, 0.2);
+  position: relative;
+  background: linear-gradient(135deg, rgba(20,20,30,0.9), rgba(10,10,15,0.95));
+}
+
+.ticket-right {
+  flex: 0.8;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(10,10,15,0.95), rgba(0,0,0,1));
+  text-align: center;
+}
+
+/* Notches */
+.ticket-left::before, .ticket-left::after {
+  content: '';
+  position: absolute;
+  right: -15px;
+  width: 30px;
+  height: 30px;
+  background: #000; /* Must match section intro bg if solid, else trickier */
+  border-radius: 50%;
+}
+.ticket-left::before { top: -15px; }
+.ticket-left::after { bottom: -15px; }
+
+
+/* Left Content */
+.ticket-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #777;
+}
+
+.ticket-header .status {
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+.ticket-left h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.ticket-left h3 {
+  font-size: 2rem;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,255,255,0.5);
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+.ticket-desc {
+  font-size: 0.95rem;
+  color: #aaa;
+  margin-bottom: 30px;
+  max-width: 90%;
+}
+
+.ticket-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.get-pass-btn {
+  padding: 12px 30px;
+  background: #fff;
+  color: #000;
+  border: none;
+  font-weight: 800;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform 0.1s;
+}
+
+.get-pass-btn:hover {
+  transform: scale(1.05);
+}
+
+.methods {
+  font-size: 0.8rem;
+  color: #555;
+  font-weight: 600;
+}
+
+
+/* Right Content */
+.qr-placeholder {
+  width: 120px;
+  height: 120px;
+  background: #fff;
+  padding: 5px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.qr-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ticket-code span {
+  display: block;
+  font-size: 0.8rem;
+  color: #777;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.ticket-code strong {
+  display: block;
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.ticket-code small {
+  font-size: 0.7rem;
+  color: #555;
+  font-family: monospace;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .ticket {
+    flex-direction: column;
+  }
+  
+  .ticket-right {
+    border-top: 2px dashed rgba(255,255,255,0.2);
+  }
+  
+  .ticket-left::before, .ticket-left::after {
+    display: none;
+  }
+}

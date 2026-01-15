@@ -1,0 +1,122 @@
+.footer-section {
+  background: #000;
+  color: #cfcfcf;
+  padding: 80px 60px 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); 
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5); /* Subtle lift */
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 60px;
+}
+
+/* HEADINGS */
+.footer-col h2 {
+  color: white;
+  margin-bottom: 18px;
+}
+
+.footer-col h3 {
+  color: white;
+  margin-bottom: 16px;
+}
+
+/* TEXT */
+.footer-col p {
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.footer-tagline {
+  color: #00f5e1;
+  margin-top: 16px;
+  font-style: italic;
+}
+
+/* LISTS */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: #cfcfcf;
+  transition: all 0.3s ease;
+  display: inline-block;
+  padding-left: 0; /* Default state */
+}
+
+.footer-col ul li a:hover {
+  color: #00f5e1;
+  padding-left: 5px; /* Slide on hover */
+}
+
+/* Rollback effect happens automatically via transition when hover ends */
+
+/* CONTACT */
+.footer-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.phone {
+  color: white;
+  font-weight: bold;
+}
+
+/* SOCIAL ICONS */
+.footer-socials {
+  display: flex;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.footer-socials span {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 245, 225, 0.15);
+  color: #00f5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.footer-socials span:hover {
+  background: #00f5e1;
+  color: black;
+}
+
+/* BOTTOM */
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: 50px;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #9a9a9a;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .footer-section {
+    padding: 60px 20px 30px;
+  }
+}
