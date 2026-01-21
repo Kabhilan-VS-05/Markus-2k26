@@ -8,6 +8,12 @@
   perspective: 1000px;
 }
 
+@media (max-width: 768px) {
+  .registration-pass-section {
+    padding: 60px 20px;
+  }
+}
+
 .ticket-container {
   width: 100%;
   max-width: 850px;
@@ -26,19 +32,18 @@
   overflow: hidden;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
   position: relative;
-  background-image: 
-    repeating-linear-gradient(
-      45deg,
-      rgba(255, 255, 255, 0.03) 0px,
-      rgba(255, 255, 255, 0.03) 1px,
-      transparent 1px,
-      transparent 10px
-    );
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.03) 0px,
+    rgba(255, 255, 255, 0.03) 1px,
+    transparent 1px,
+    transparent 10px
+  );
 }
 
 /* HOLOGRAPHIC SHIMMER OVERLAY */
 .ticket::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -150%;
@@ -59,9 +64,15 @@
 }
 
 @keyframes hologramShine {
-  0% { left: -150%; }
-  20% { left: 150%; }
-  100% { left: 150%; } /* Pause interval */
+  0% {
+    left: -150%;
+  }
+  20% {
+    left: 150%;
+  }
+  100% {
+    left: 150%;
+  } /* Pause interval */
 }
 
 /* Stubs */
@@ -70,7 +81,11 @@
   padding: 40px;
   border-right: 2px dashed rgba(255, 255, 255, 0.2);
   position: relative;
-  background: linear-gradient(135deg, rgba(20,20,30,0.9), rgba(10,10,15,0.95));
+  background: linear-gradient(
+    135deg,
+    rgba(20, 20, 30, 0.9),
+    rgba(10, 10, 15, 0.95)
+  );
 }
 
 .ticket-right {
@@ -80,13 +95,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, rgba(10,10,15,0.95), rgba(0,0,0,1));
+  background: linear-gradient(135deg, rgba(10, 10, 15, 0.95), rgba(0, 0, 0, 1));
   text-align: center;
 }
 
 /* Notches */
-.ticket-left::before, .ticket-left::after {
-  content: '';
+.ticket-left::before,
+.ticket-left::after {
+  content: "";
   position: absolute;
   right: -15px;
   width: 30px;
@@ -94,9 +110,12 @@
   background: #000; /* Must match section intro bg if solid, else trickier */
   border-radius: 50%;
 }
-.ticket-left::before { top: -15px; }
-.ticket-left::after { bottom: -15px; }
-
+.ticket-left::before {
+  top: -15px;
+}
+.ticket-left::after {
+  bottom: -15px;
+}
 
 /* Left Content */
 .ticket-header {
@@ -125,7 +144,7 @@
 .ticket-left h3 {
   font-size: 2rem;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(255,255,255,0.5);
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
   margin-bottom: 25px;
   text-transform: uppercase;
 }
@@ -165,7 +184,6 @@
   font-weight: 600;
 }
 
-
 /* Right Content */
 .qr-placeholder {
   width: 120px;
@@ -203,18 +221,18 @@
   font-family: monospace;
 }
 
-
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .ticket {
     flex-direction: column;
   }
-  
+
   .ticket-right {
-    border-top: 2px dashed rgba(255,255,255,0.2);
+    border-top: 2px dashed rgba(255, 255, 255, 0.2);
   }
-  
-  .ticket-left::before, .ticket-left::after {
+
+  .ticket-left::before,
+  .ticket-left::after {
     display: none;
   }
 }
