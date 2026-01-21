@@ -311,8 +311,8 @@
     max-width: 100%;
     min-height: auto;
     margin-bottom: 20px;
-    top: 50px;
-    position: relative;
+    top: 15vh;        /* Restore sticky top position */
+    position: sticky; /* Re-enable sticky behavior for stacking */
     border-left: 6px solid var(--accent-color);
   }
 

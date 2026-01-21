@@ -31,16 +31,7 @@ window.addEventListener("scroll", () => {
   /* =========================
      CARD SEQUENCE ANIMATION
   ========================= */
-  items.forEach((item, index) => {
-    const itemRect = item.getBoundingClientRect();
-    const trigger = windowHeight * 0.75;
-
-    if (itemRect.top < trigger && itemRect.bottom > 0) {
-      setTimeout(() => {
-        item.classList.add("active");
-      }, index * 160);
-    } else {
-      item.classList.remove("active");
-    }
-  });
+  // Removed JS class toggling because GSAP in script.js now handles 
+  // the appearance/zoom of .zigzag-card elements.
+  // This prevents double-animation conflicts.
 });

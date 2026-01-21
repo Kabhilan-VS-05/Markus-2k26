@@ -1,7 +1,24 @@
 // Navbar scroll behavior (unchanged)
+// Navbar scroll behavior with BOUNCE
+let isBouncing = false;
+
 window.addEventListener("scroll", () => {
-  document.getElementById("navbar")
-    .classList.toggle("scrolled", window.scrollY > 60);
+  const navbar = document.getElementById("navbar");
+  
+  // Toggle Scrolled State
+  navbar.classList.toggle("scrolled", window.scrollY > 60);
+
+  // Bounce on Top Reach
+  if (window.scrollY === 0 && !isBouncing) {
+    isBouncing = true;
+    navbar.classList.add("navbar-bounce");
+    
+    // Remove class after animation to allow re-trigger
+    setTimeout(() => {
+      navbar.classList.remove("navbar-bounce");
+      isBouncing = false;
+    }, 600);
+  }
 });
 
 // Mobile menu
@@ -34,7 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // UNIFIED 3D SPATIAL ZOOM (Events, Guidelines, Timeline, Team)
     // Applies 3D fly-in effect to multiple container types
-    const cards = document.querySelectorAll('.stack-card, .guideline-card, .zigzag-card, .student-card, .faculty-card');
+    // REMOVED .stack-card TO PREVENT CONFLCIT WITH events.js
+    const cards = document.querySelectorAll('.guideline-card, .zigzag-card, .person, .faculty-highlight');
 
     // Reset initial CSS state
     gsap.set(cards, { opacity: 0 });

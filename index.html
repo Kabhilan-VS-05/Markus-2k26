@@ -34,6 +34,7 @@
       <a href="#events">Events</a>
       <a href="#schedule">Schedule</a>
       <a href="#team">Team</a>
+      <a href="#guidelines">Guidelines</a>
       <a href="#register">Register</a>
     </nav>
 
@@ -436,7 +437,7 @@
 </section>
 
 <!-- EVENT GUIDELINES SECTION -->
-<section class="guidelines-section">
+<section class="guidelines-section" id="guidelines">
   <h2 class="section-heading">Event Guidelines</h2>
   <p class="section-subheading">Rules and Regulations for Participants</p>
 
@@ -515,46 +516,7 @@
 </section>
 
 
-<!-- REGISTRATION PASS / TICKET SECTION -->
-<section class="registration-pass-section" id="register">
-  
-  <div class="ticket-container">
-    <div class="ticket">
-      
-      <!-- LEFT STUB -->
-      <div class="ticket-left">
-        <div class="ticket-header">
-          <span>VIBE: TECH & INNOVATION</span>
-          <span class="status">REGISTRATION OPEN</span>
-        </div>
-        
-        <h2>MARK US – 26</h2>
-        <h3>SYMPOSIUM</h3>
-        
-        <p class="ticket-desc">Step into the elite circle of technology. Join us for a day of competitive coding, paper presentations, and technical breakthroughs.</p>
-        
-        <div class="ticket-actions">
-           <button class="get-pass-btn">GET YOUR PASS</button>
-           <span class="methods">GPAY • UPI</span>
-        </div>
-      </div>
-
-      <!-- RIGHT STUB -->
-      <div class="ticket-right">
-        <div class="qr-placeholder">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=MarkUs26Registration" alt="QR Code">
-        </div>
-        <div class="ticket-code">
-          <span>ADMIT ONE</span>
-          <strong>24 Jan 2026</strong>
-          <small>MSC-PASS-2026</small>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-</section>
+<!-- (Duplicate Register Section Removed) -->
 
 
 
@@ -621,6 +583,54 @@
 
 </section>
 
+<!-- REGISTER SECTION (TICKET STYLE) -->
+<section class="register-section" id="register">
+  <div class="ticket-container">
+    
+    <!-- LEFT PANEL -->
+    <div class="ticket-left">
+      <div class="ticket-header">
+        <span class="vibe-text">VIBE: TECH & INNOVATION</span>
+        <span class="status-text">REGISTRATION OPEN</span>
+      </div>
+      
+      <h1 class="ticket-title">MESICA – 26</h1>
+      <h2 class="ticket-subtitle">SYMPOSIUM</h2>
+      
+      <p class="ticket-desc">
+        Step into the elite circle of technology. Join us for a day of
+        competitive coding, paper presentations, and technical breakthroughs.
+      </p>
+      
+      <div class="ticket-actions">
+        <button class="btn-pass">GET YOUR PASS</button>
+        <span class="pay-info">GPAY • UPI</span>
+      </div>
+    </div>
+
+    <!-- DIVIDER -->
+    <div class="ticket-divider">
+      <div class="notch-top"></div>
+      <div class="dashed-line"></div>
+      <div class="notch-bottom"></div>
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="ticket-right">
+      <div class="qr-box">
+        <!-- Using a placeholder QR for now, or FontAwesome icon if image not available -->
+        <i class="ri-qr-code-line qr-placeholder"></i>
+        <div class="scanner-laser"></div>
+      </div>
+      
+      <p class="admit-text">ADMIT ONE</p>
+      <h3 class="ticket-date">24 Jan 2026</h3>
+      <small class="ticket-id">MSC-PASS-2026</small>
+    </div>
+
+  </div>
+</section>
+
 <!-- FOOTER SECTION -->
 <footer class="footer-section">
 
@@ -648,6 +658,7 @@
         <li><a href="#events">Events</a></li>
         <li><a href="#schedule">Schedule</a></li>
         <li><a href="#team">Team</a></li>
+        <li><a href="#guidelines">Guidelines</a></li>
         <li><a href="#register">Register</a></li>
       </ul>
     </div>
@@ -719,6 +730,19 @@
     document.body.classList.remove("loading");
   });
 </script>
+<!-- GUIDELINE BOTTOM SHEET (MOBILE) -->
+<div class="guideline-bottom-sheet" id="guidelineSheet">
+  <div class="sheet-overlay" id="sheetOverlay"></div>
+  <div class="sheet-content">
+    <div class="sheet-drag-handle"></div>
+    <div class="sheet-body">
+      <div class="sheet-icon" id="sheetIcon"><i class="ri-information-line"></i></div>
+      <h3 id="sheetTitle">Title</h3>
+      <p id="sheetDesc">Description</p>
+    </div>
+  </div>
+</div>
+
 <script src="js/script.js"></script>
 
 </body>
