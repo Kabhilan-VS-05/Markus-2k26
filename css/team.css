@@ -59,15 +59,16 @@
 /* ===== CONTAINER ===== */
 .compare-container {
   position: relative;
-  width: 90vw;
-  height: 80vh;      /* Increased from 75vh */
-  max-width: 1300px;
-  max-height: 900px; /* Increased from 750px */
-  min-height: 700px; /* Ensure space */
+  width: 85vw;
+  height: 600px;      /* Reduced from 80vh */
+  max-width: 1000px;  /* Reduced from 1300px */
+  max-height: 700px;  /* Reduced from 900px */
+  min-height: 550px;  /* Reduced from 700px */
   overflow: hidden;
-  border-radius: 24px;
+  border-radius: 20px;
   cursor: ew-resize;
-  touch-action: none;
+  /* FIX: Allow vertical scroll (pan-y) so users don't get stuck */
+  touch-action: pan-y !important;
   
   /* Enhanced glassmorphism */
   background: rgba(255, 255, 255, 0.06);
