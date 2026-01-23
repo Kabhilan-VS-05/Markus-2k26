@@ -650,8 +650,9 @@
   }
 
   /* Remove all animations globally for mobile */
+  /* Remove all animations globally for mobile */
   .team-compare-section::before {
-    animation: none !important;
+    display: none !important;
   }
 
   .content {

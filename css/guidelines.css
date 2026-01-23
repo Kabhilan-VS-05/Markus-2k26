@@ -340,17 +340,50 @@
         animation-name: swipePulseLeft;
     }
 
-    /* Adjusted Card Size for Mobile */
+    /* Performance Optimization for Mobile */
     .data-blade {
         width: 80%;
-        max-width: 260px; /* Reduced Width */
-        height: 320px;    /* Compact Height */
+        max-width: 260px;
+        height: 320px;
         padding: 20px 15px; 
-        backdrop-filter: blur(15px);
+        
+        /* DISABLE EXPENSIVE FILTERS */
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: rgba(10, 15, 20, 0.95) !important; /* Solid fallback */
+        
+        /* SIMPLIFY SHADOWS */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5) !important;
+        border: 1px solid rgba(0, 245, 225, 0.3) !important;
+        
+        /* OPTIMIZE TRANSITIONS */
+        transition: transform 0.4s ease-out !important; /* Faster, simpler transition */
+    }
+    
+    .data-blade.active {
+        /* SIMPLER ACTIVE STATE */
+        box-shadow: 0 0 15px rgba(0, 245, 225, 0.2) !important;
+        border-color: var(--accent-color) !important;
+    }
+
+    /* DISABLE HOLOGRAPHIC SCAN ON MOBILE */
+    .data-blade::before,
+    .data-blade::after {
+        display: none !important;
+    }
+
+    /* REDUCE BACKGROUND COMPLEXITY */
+    .guidelines-carousel-wrapper::before {
+        background: 
+            linear-gradient(0deg, transparent 24%, rgba(0, 245, 225, 0.05) 25%, rgba(0, 245, 225, 0.05) 26%, transparent 27%, transparent),
+            linear-gradient(90deg, transparent 24%, rgba(0, 245, 225, 0.05) 25%, rgba(0, 245, 225, 0.05) 26%, transparent 27%, transparent) !important;
+        background-size: 50px 50px !important;
+        mask-image: none !important; /* Remove expensive mask */
+        opacity: 0.2 !important;
     }
     
     .blade-description {
-        font-size: 0.8rem; /* Smaller Text */
+        font-size: 0.8rem;
         padding: 0 5px;
     }
 }

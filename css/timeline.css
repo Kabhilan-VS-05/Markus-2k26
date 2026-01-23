@@ -190,6 +190,10 @@
   .zigzag-lines {
     width: 90px;
   }
+  
+  .zigzag-path {
+    filter: none !important; /* Disable expensive glow */
+  }
 
   .zigzag-card {
     width: 94%;
