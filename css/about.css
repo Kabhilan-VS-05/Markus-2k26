@@ -64,7 +64,7 @@
 
 .BlockIntro_streamWrapper.back .BlockIntro_streamText {
   color: rgba(0, 245, 225, 0.15); /* Faint Ghost */
-  filter: blur(2px); /* Blur effect */
+  filter: none; /* Removed blur on mobile for performance */
 }
 
 /* MARQUEE CONTAINER */
@@ -188,6 +188,15 @@
   .about-card {
     min-height: auto;
     padding: 20px;
+    backdrop-filter: none !important; /* Disable expensive blur on mobile */
+    -webkit-backdrop-filter: none !important;
+    transform-style: flat !important; /* Flatten 3D for performance */
+    perspective: none !important;
+    background: rgba(15, 15, 20, 0.95); /* Solid background for legibility */
+  }
+
+  .about-card::after, .about-card::before {
+    display: none !important; /* Remove scanlines and glow gradients on mobile */
   }
 
   .about-card img {
@@ -243,12 +252,47 @@
 }
 
 .about-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-10px) rotateX(4deg) rotateY(4deg);
+  background: rgba(255, 255, 255, 0.08);
   border-color: var(--accent-color);
-  box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.5),
-    0 0 20px rgba(0, 245, 225, 0.2);
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.6),
+    0 0 30px rgba(0, 245, 225, 0.3);
+}
+
+/* SCANLINE EFFECT */
+.about-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.03) 0px,
+    rgba(255, 255, 255, 0.03) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+/* HOLOGRAPHIC GLITCH (ON HOVER) */
+.about-card:hover h3 {
+  color: var(--accent-color);
+  animation: glitch-text 0.3s ease infinite;
+  text-shadow: 2px 0 #f0f, -2px 0 #0ff;
+}
+
+@keyframes glitch-text {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 1px); }
+  40% { transform: translate(2px, -1px); }
+  60% { transform: translate(-1px, -2px); }
+  80% { transform: translate(1px, 2px); }
+  100% { transform: translate(0); }
 }
 
 .about-card:hover h3 {

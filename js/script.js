@@ -28,7 +28,7 @@ document.getElementById("menuToggle").onclick = () => {
 
 
 // Countdown
-const targetDate = new Date("January 24, 2026 09:00:00").getTime();
+const targetDate = new Date("February 27, 2026 09:00:00").getTime();
 
 setInterval(() => {
   const now = new Date().getTime();

@@ -36,6 +36,17 @@
     opacity: 0.8;
 }
 
+/* INTERACTIVE HEADING GLITCH */
+.guidelines-section:hover .section-heading {
+    animation: headingGlitch 0.2s linear infinite alternate-reverse;
+}
+
+@keyframes headingGlitch {
+    0% { transform: skew(0deg); text-shadow: 2px 0 #0ff, -2px 0 #f0f; }
+    50% { transform: skew(1deg); text-shadow: -2px 0 #0ff, 2px 0 #f0f; }
+    100% { transform: skew(-1deg); text-shadow: 2px 0 #0ff, -2px 0 #f0f; }
+}
+
 /* UNIFIED CAROUSEL WRAPPER */
 .guidelines-carousel-wrapper {
     display: block;

@@ -463,206 +463,131 @@
 ========================= */
 @media (max-width: 768px) {
 
-  /* Remove slider functionality - make it a simple section */
+  /* SECTION */
   .team-compare-section {
-    display: block !important;
-    height: auto !important;
-    padding: 60px 20px !important;
+    padding: 60px 0;
   }
 
+  .team-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+  }
+
+
+  /* CONTAINER */
   .compare-container {
-    height: auto !important;
-    max-height: none !important;
-    overflow: visible !important;
-    cursor: default !important;
-    border-radius: 0 !important;
-    background: transparent !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    border: none !important;
-    box-shadow: none !important;
+    width: 94vw;
+    height: 50vh;          /* HALF SCREEN */
+    min-height: 380px;
+    max-height: 420px;
+    border-radius: 18px;
   }
 
-  /* Remove panel positioning - make them stack vertically */
+  /* PANELS */
   .panel {
-    position: static !important;
-    padding: 30px 20px !important;
-    clip-path: none !important;
+    padding: 18px;
   }
 
-  .before-panel,
-  .after-panel {
-    background: transparent !important;
-    box-shadow: none !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    clip-path: none !important;
+  /* CONTENT */
+  .content {
+    max-width: 100%;
   }
 
-  /* Hide arrow controls completely on mobile */
-  .arrow-control {
-    display: none !important;
-  }
-
-  /* Simple section title */
   .section-title {
-    font-size: 2rem !important;
-    margin-bottom: 20px !important;
+    font-size: 1.5rem;
+    margin-bottom: 8px;
   }
 
   .sub {
-    font-size: 0.9rem !important;
-    margin-bottom: 30px !important;
+    font-size: 0.85rem;
+    margin-bottom: 16px;
   }
 
-  /* Stack team members vertically */
+  /* PEOPLE LAYOUT */
   .people {
-    flex-direction: column !important;
-    gap: 20px !important;
-    padding: 0 !important;
-    overflow-x: visible !important;
-    scroll-snap-type: none !important;
+    gap: 16px;
   }
 
-  /* Simple card design - no animations */
+  /* STUDENT CARDS */
   .person {
-    max-width: 100% !important;
-    min-width: auto !important;
-    padding: 25px 20px !important;
-    border-radius: 16px !important;
-    scroll-snap-align: none !important;
-    background: rgba(255, 255, 255, 0.05) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
+    max-width: 150px;
+    padding: 14px 12px;
+    border-radius: 14px;
   }
 
-  /* Remove all hover effects */
-  .person::before {
-    display: none !important;
-  }
-
-  .person:hover {
-    transform: none !important;
-    border-color: rgba(255, 255, 255, 0.1) !important;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
-  }
-
-  .person:hover::before {
-    animation: none !important;
-  }
-
-  /* Simple avatar - no animations */
+  /* AVATAR */
   .avatar {
-    width: 70px !important;
-    height: 70px !important;
-    margin-bottom: 15px !important;
-    background: rgba(0, 245, 225, 0.1) !important;
-    border: 1px solid rgba(0, 245, 225, 0.2) !important;
-    box-shadow: none !important;
+    width: 56px;
+    height: 56px;
+    margin-bottom: 10px;
   }
 
   .avatar i {
-    font-size: 32px !important;
-    animation: none !important;
-    color: #00ffe0 !important;
+    font-size: 26px;
   }
 
-  .person:hover .avatar {
-    transform: none !important;
-    border-color: rgba(0, 245, 225, 0.2) !important;
-    box-shadow: none !important;
-    background: rgba(0, 245, 225, 0.1) !important;
-  }
-
-  .person:hover .avatar i {
-    transform: none !important;
-    color: #00ffe0 !important;
-    filter: none !important;
-  }
-
-  /* Simple text */
+  /* TEXT */
   .name {
-    font-size: 1.1rem !important;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
   }
 
   .role {
-    font-size: 0.85rem !important;
-    margin-bottom: 10px !important;
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
   }
 
   .desc {
-    font-size: 0.85rem !important;
-    line-height: 1.5 !important;
-    margin-bottom: 12px !important;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    margin-bottom: 10px;
   }
 
-  /* Simple contact button - no effects */
-  .contact {
-    font-size: 0.8rem !important;
-    padding: 8px 16px !important;
-    background: rgba(0, 245, 225, 0.1) !important;
-    border: 1px solid rgba(0, 245, 225, 0.3) !important;
+  /* FACULTY */
+  .faculty-highlight {
+    max-width: 100%;
   }
 
-  .contact::before {
-    display: none !important;
-  }
-
-  .contact:hover {
-    background: rgba(0, 245, 225, 0.15) !important;
-    transform: none !important;
-    box-shadow: none !important;
-  }
-
-  .contact:hover i {
-    transform: none !important;
-  }
-
-  /* Faculty section - simple */
   .faculty-avatar {
-    width: 90px !important;
-    height: 90px !important;
-    margin-bottom: 20px !important;
-    background: rgba(0, 245, 225, 0.1) !important;
-    border: 2px solid rgba(0, 245, 225, 0.2) !important;
-    box-shadow: none !important;
-    animation: none !important;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 14px;
   }
 
   .faculty-avatar i {
-    font-size: 48px !important;
-    filter: none !important;
-    animation: none !important;
+    font-size: 36px;
   }
 
   .faculty-name {
-    font-size: 1.4rem !important;
+    font-size: 1.1rem;
   }
 
   .faculty-role {
-    font-size: 0.9rem !important;
-    margin-bottom: 15px !important;
+    font-size: 0.75rem;
+    margin-bottom: 12px;
   }
 
   .faculty-divider {
-    margin-bottom: 20px !important;
-    box-shadow: none !important;
+    width: 60px;
+    margin-bottom: 14px;
   }
 
-  /* Remove all animations globally for mobile */
-  /* Remove all animations globally for mobile */
-  .team-compare-section::before {
-    display: none !important;
+  /* CONTACT BUTTON */
+  .contact {
+    padding: 6px 12px;
+    font-size: 0.7rem;
+    gap: 6px;
   }
 
-  .content {
-    animation: none !important;
+  .contact i {
+    font-size: 12px;
   }
 
-  /* Scope animation removal to team section only */
-  .team-compare-section * {
-    animation: none !important;
-    transition: none !important;
+  /* ARROWS */
+  .arrow-btn {
+    font-size: 20px;
   }
+
 }
-

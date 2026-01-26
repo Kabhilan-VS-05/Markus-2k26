@@ -49,7 +49,13 @@
 
 .status-text {
     color: var(--accent-color, #00f5e1);
-    text-shadow: 0 0 10px rgba(0, 245, 225, 0.4);
+    text-shadow: 0 0 15px rgba(0, 245, 225, 0.6);
+    animation: pulseGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+    from { opacity: 0.8; }
+    to { opacity: 1; filter: brightness(1.2); }
 }
 
 .ticket-title {
@@ -202,9 +208,11 @@
 }
 
 .ticket-id {
-    color: #444;
+    color: var(--accent-color);
     font-family: monospace;
     font-size: 0.9rem;
+    opacity: 0.6;
+    letter-spacing: 2px;
 }
 
 
@@ -242,11 +250,12 @@
         border-top: 2px dashed #333;
     }
 
-    .notch-top { left: -15px; top: -15px; } /* Actually becomes notch-left */
-    .notch-bottom { right: -15px; top: -15px; left: auto; } /* notch-right */
-
+    .notch-top { left: -15px; top: -15px; } 
+    .notch-bottom { right: -15px; top: -15px; left: auto; } 
+    
     .ticket-right {
-        padding: 30px;
+        width: 100%;
+        padding: 40px 30px;
         border-left: none;
         border-top: 1px solid rgba(255,255,255,0.05);
     }
